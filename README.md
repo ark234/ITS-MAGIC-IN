@@ -10,6 +10,7 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - pg-promise will be used for accessing local database
 - axios will be used for making external api calls
 - bcrypt will be used for auth and password encryption in db
+- 
 
 ### Minimum Viable Product (MVP):
 - User login/registration
@@ -18,7 +19,8 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - Dynamic Dark/Light themes based on sunset-sunrise api 
 ### Reach Goals:
 - Add Twilio API (https://www.twilio.com/docs/api/rest) for scheduled notifications via SMS
-- Authentication
+- Authentication - bcrypt
+- Geolocation (https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation)
 ### Potential Blockers:
 - Interfacing the API may be tricky
 ### Timeline:
@@ -27,7 +29,7 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - Create a repository ✅
 
 **Friday:**
-- Determine specifications
+- Determine specifications ✅
 - Flow chart
 - Wireframe
 - Pseudocode
@@ -69,5 +71,6 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - AJAX
 - pg-promise
 - axios
+- Twilio Node Helper Library (https://www.twilio.com/docs/libraries/node)
 ### Repo Link:
 https://github.com/ark234/PROJECT2-FUZZY-YELLOW
