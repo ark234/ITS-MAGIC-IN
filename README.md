@@ -4,6 +4,13 @@
 ### Description:
 I want to help photographers master the magic hour. My app will tell the user when the magic hour will happen each day, depending on location. Magic hour is an hour or so before sunset and after sunrise when natural light is 👌👌👌👌. I want to animate the solar cycle as well so the app will be beautiful as well as practical. I plan to add sms reminder feature using Twilio API if I have time. 
 
+### Technical Detail:
+- Webapp will be built on Node.js using Express MVC architecture
+- There are going to be two models: users and magic-hour
+- pg-promise will be used for accessing local database
+- axios will be used for making external api calls
+- bcrypt will be used for auth and password encryption in db
+
 ### Minimum Viable Product (MVP):
 - User login/registration
 - Real-time clock
@@ -59,5 +66,8 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - jQuery
 - Express
 - Node.js
+- AJAX
+- pg-promise
+- axios
 ### Repo Link:
 https://github.com/ark234/PROJECT2-FUZZY-YELLOW
