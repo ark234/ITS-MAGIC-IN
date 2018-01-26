@@ -7,11 +7,10 @@ I want to help photographers master the magic hour. My app will tell the user wh
 ### Minimum Viable Product (MVP):
 - Models: user and time
 - User login/registration
-- Persisted alarm clock
+- Magic hour reminder 
 - Dynamic Dark/Light themes based on sunset-sunrise api (https://sunrise-sunset.org/api)
 ### Reach Goals:
 - Add Twilio API (https://www.twilio.com/docs/api/rest) for scheduled notifications via SMS
-- Unit Testing
 - Authentication
 ### Potential Blockers:
 - Interfacing the API may be tricky
@@ -37,16 +36,15 @@ I want to help photographers master the magic hour. My app will tell the user wh
 
 **Sunday:**
 - Add real-time clock
-- Add alarm input to be persisted in db
-- Add event when alarm is triggered
+- Calculate magic hour times based on sunset/sunrise time
+- Add notifications
 - Create dark/light themes based on sunset/sunrise time
 
 **Monday**
 - Complete MVP 
 - Add Twilio API for sending SMS
-- Create scheduler that will send an SMS reminder set by user
+- Create scheduler that will text Magic Hour Reminders
 - Add documentation 
-- Unit testing ?
 
 **Tuesday**
 - Upload app to Heroku 
@@ -59,6 +57,7 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - CSS3
 - JavaScript
 - jQuery
-- 
+- Express
+- Node.js
 ### Repo Link:
 https://github.com/ark234/PROJECT2-FUZZY-YELLOW
