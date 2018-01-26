@@ -5,10 +5,10 @@
 I want to help photographers master the magic hour. My app will tell the user when the magic hour will happen each day, depending on location. Magic hour is an hour or so before sunset and after sunrise when natural light is 👌👌👌. I want to animate the solar cycle as well so the app will be beautiful as well as practical. I plan to add sms reminder feature using Twilio API if I have time. 
 
 ### Minimum Viable Product (MVP):
-- Models: user and time
 - User login/registration
-- Magic hour reminder 
-- Dynamic Dark/Light themes based on sunset-sunrise api (https://sunrise-sunset.org/api)
+- Real-time clock
+- Magic hour reminders based on sunset-sunrise API (https://sunrise-sunset.org/api)
+- Dynamic Dark/Light themes based on sunset-sunrise api 
 ### Reach Goals:
 - Add Twilio API (https://www.twilio.com/docs/api/rest) for scheduled notifications via SMS
 - Authentication
