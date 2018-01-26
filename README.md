@@ -2,7 +2,7 @@
 # PROJECT2-FUZZY-YELLOW
 
 ### Description:
-I want to make a simple persisted alarm clock. I have a cool design idea I'm working on; basically I want to animate the solar cycle using sunset-sunrise API. If I get to MVP early, I want to add sms reminder feature using Twilio API.
+I want to help photographers master the magic hour. My app will tell the user when the magic hour will happen each day, depending on location. Magic hour is an hour or so before sunset and after sunrise when natural light is 👌👌👌. I want to animate the solar cycle as well so the app will be beautiful as well as practical. I plan to add sms reminder feature using Twilio API if I have time. 
 
 ### Minimum Viable Product (MVP):
 - Models: user and time
