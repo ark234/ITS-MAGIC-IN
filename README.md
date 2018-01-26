@@ -10,7 +10,7 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - pg-promise will be used for accessing local database
 - axios will be used for making external api calls
 - bcrypt will be used for auth and password encryption in db
-- 
+- Moment.js will be used for time keeping
 
 ### Minimum Viable Product (MVP):
 - User login/registration
@@ -66,11 +66,15 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - CSS3
 - JavaScript
 - jQuery
-- Express
 - Node.js
 - AJAX
+### Packages
+- express
 - pg-promise
 - axios
 - Twilio Node Helper Library (https://www.twilio.com/docs/libraries/node)
+- Moment.js (http://momentjs.com/docs/)
+- Mustache
+- Body parser
 ### Repo Link:
 https://github.com/ark234/PROJECT2-FUZZY-YELLOW
