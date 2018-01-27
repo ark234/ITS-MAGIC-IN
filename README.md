@@ -73,8 +73,11 @@ I want to help photographers master the magic hour. My app will tell the user wh
 - pg-promise
 - axios
 - Twilio Node Helper Library (https://www.twilio.com/docs/libraries/node)
-- Moment.js (http://momentjs.com/docs/)
-- Mustache
-- Body parser
+- moment (http://momentjs.com/docs/)
+- mustache-express
+- body-parser
+- bcrypts
+- cookie-parser
+- express-session
 ### Repo Link:
 https://github.com/ark234/PROJECT2-FUZZY-YELLOW
