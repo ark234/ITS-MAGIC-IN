@@ -1,32 +1,33 @@
 {
-  "name": "project2-fuzzy-yellow",
-  "version": "1.0.0",
-  "description": "### Description: I want to help photographers master the magic hour. My app will tell the user when the magic hour will happen each day, depending on location. Magic hour is an hour or so before sunset and after sunrise when natural light is 👌👌👌. I want to animate the solar cycle as well so the app will be beautiful as well as practical. I plan to add sms reminder feature using Twilio API if I have time.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ark234/PROJECT2-FUZZY-YELLOW.git"
-  },
-  "author": "Arkadiy Nigay",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ark234/PROJECT2-FUZZY-YELLOW/issues"
-  },
-  "homepage": "https://github.com/ark234/PROJECT2-FUZZY-YELLOW#readme",
-  "dependencies": {
-    "axios": "^0.17.1",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.2",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
-    "express-session": "^1.15.6",
-    "moment": "^2.20.1",
-    "morgan": "^1.9.0",
-    "mustache-express": "^1.2.5",
-    "passport": "^0.4.0",
-    "pg-promise": "^7.4.0"
-  }
+	"name": "project2-fuzzy-yellow",
+	"version": "1.0.0",
+	"description": "### Description: I want to help photographers master the magic hour. My app will tell the user when the magic hour will happen each day, depending on location. Magic hour is an hour or so before sunset and after sunrise when natural light is 👌👌👌. I want to animate the solar cycle as well so the app will be beautiful as well as practical. I plan to add sms reminder feature using Twilio API if I have time.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "nodemon -e html,css,js index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ark234/PROJECT2-FUZZY-YELLOW.git"
+	},
+	"author": "Arkadiy Nigay",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ark234/PROJECT2-FUZZY-YELLOW/issues"
+	},
+	"homepage": "https://github.com/ark234/PROJECT2-FUZZY-YELLOW#readme",
+	"dependencies": {
+		"axios": "^0.17.1",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.18.2",
+		"cookie-parser": "^1.4.3",
+		"express": "^4.16.2",
+		"express-session": "^1.15.6",
+		"moment": "^2.20.1",
+		"morgan": "^1.9.0",
+		"mustache-express": "^1.2.5",
+		"passport": "^0.4.0",
+		"pg-promise": "^7.4.0"
+	}
 }

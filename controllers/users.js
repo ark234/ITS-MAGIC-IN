@@ -30,4 +30,47 @@ router.post(
 	)
 );
 
-//
+// Register new user
+router.get('/new', (req, res) => {
+	res.render('');
+});
+
+// Logout
+router.get('/logout', (req, res) => {
+	// Passport adds this method on req for us
+	req.logout();
+	// Redirect back to index page
+	res.redirect('/');
+});
+
+// Login
+router.get('/login', (req, res) => {
+	res.render('/login');
+});
+
+/**
+ * Passport.authenticate will _build_ middleware for us
+ * based on the 'local-login' strategy we registered with
+ * passport in auth.js
+ */
+router.post(
+	'/login',
+	passport.authenticate('local-login', {
+		failureRedirect: '/login',
+		successRedirect: '/home'
+	})
+);
+
+// User profile
+router.get(
+	'/home',
+	// Middleware that redirects unauthenticated users to login
+	auth.restrict,
+	User.findByEmailMiddleware,
+	(req, res) => {
+		console.log('in handler for /home');
+		console.log('req.user:');
+		console.log(req.user);
+		res.render('/home', { user: res.locals.userData });
+	}
+);
