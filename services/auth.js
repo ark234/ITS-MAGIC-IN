@@ -68,7 +68,7 @@ passport.use(
 					return done(null, user);
 				})
 				.catch(err => {
-					console.log('ERROR:', err);
+					console.log('ERROR in User.create:', err);
 					return done(null, false); // signals that signup was unsuccessful
 				});
 		}

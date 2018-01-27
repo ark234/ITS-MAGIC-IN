@@ -5,11 +5,29 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Login</title>
 </head>
 
 <body>
-	<h1>Login</h1>
+	<main>
+		<section>
+			<h1>Login</h1>
+			<form action="/users/login" method="post">
+				<label for="email">Email</label>
+				<br>
+				<input type="text" id="email" name="user[email]">
+				<br>
+				<label for="password">Password</label>
+				<br>
+				<input type="password" id="password" name="user[password]">
+				<br>
+				<button>Login</button>
+			</form>
+			<div>
+				<a href="/users/register">Sign Up</a>
+			</div>
+		</section>
+	</main>
 </body>
 
 </html>

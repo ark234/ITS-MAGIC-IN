@@ -5,11 +5,37 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Register</title>
+	<title>Sign Up</title>
 </head>
 
 <body>
-	<h1>Register Page</h1>
+	<main>
+		<section>
+			<h1>Sign Up</h1>
+			<form action="/users" method="post">
+				<label for="email">Email</label>
+				<br>
+				<input type="text" id="email" name="user[email]">
+				<br>
+				<label for="password">Password</label>
+				<br>
+				<input type="password" id="password" name="user[password]">
+				<br>
+				<label for="phone">Phone</label>
+				<br>
+				<input type="text" id="phone" name="user[phone]">
+				<br>
+				<label for="zip">Zip Code</label>
+				<br>
+				<input type="text" id="zip">
+				<br>
+				<button>Sign Up</button>
+			</form>
+			<div>
+				<a href="/users/login">Login</a>
+			</div>
+		</section>
+	</main>
 </body>
 
 </html>

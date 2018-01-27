@@ -6,8 +6,8 @@ const passport = require('passport');
 // Import auth
 const auth = require('../services/auth.js');
 
-router.get('/', (req, res, next) => {
-	res.redirect('/home');
+router.get('/', (req, res) => {
+	res.redirect('/users/home');
 });
 
 /**
@@ -24,15 +24,15 @@ router.post(
 		// 'local-signup' back in index.js.
 		'local-signup',
 		{
-			failureRedirect: '/register',
-			successRedirect: '/home'
+			failureRedirect: '/users/register',
+			successRedirect: '/users/home'
 		}
 	)
 );
 
 // Register new user
-router.get('/new', (req, res) => {
-	res.render('');
+router.get('/register', (req, res) => {
+	res.render('./register');
 });
 
 // Logout
@@ -45,7 +45,7 @@ router.get('/logout', (req, res) => {
 
 // Login
 router.get('/login', (req, res) => {
-	res.render('/login');
+	res.render('./login');
 });
 
 /**
@@ -56,8 +56,8 @@ router.get('/login', (req, res) => {
 router.post(
 	'/login',
 	passport.authenticate('local-login', {
-		failureRedirect: '/login',
-		successRedirect: '/home'
+		failureRedirect: '/users/login',
+		successRedirect: '/users/home'
 	})
 );
 
@@ -71,6 +71,8 @@ router.get(
 		console.log('in handler for /home');
 		console.log('req.user:');
 		console.log(req.user);
-		res.render('/home', { user: res.locals.userData });
+		res.render('./home', { user: res.locals.userData });
 	}
 );
+
+module.exports = router;

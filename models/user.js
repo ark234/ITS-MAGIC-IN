@@ -6,9 +6,12 @@ const userModel = {};
 
 userModel.create = function create(user) {
 	// This is where we obtain the hash of the user's password
+	// console.log('creating user:', user);
 	const passwordDigest = bcrypt.hashSync(user.password, 10);
-	return db.oneOrNone('INSERT INTO users (email, password_digest) VALUES ($1, $2) RETURNING *;', [
+	return db.oneOrNone('INSERT INTO users (email, phone, zip, password_digest) VALUES ($1, $2, $3, $4) RETURNING *;', [
 		user.email,
+		user.phone,
+		user.zip,
 		passwordDigest
 	]);
 };
@@ -31,3 +34,5 @@ userModel.findByEmailMiddleware = function findByEmailMiddleware(req, res, next)
 			console.log('Error:', err);
 		});
 };
+
+module.exports = userModel;

@@ -5,7 +5,8 @@ const pgp = require('pg-promise')();
 const cn = {
 	host: 'localhost',
 	port: 5432,
-	databse: 'fuzzy_yellow'
+	databse: 'fuzzy_yellow',
+	user: 'ark234'
 };
 
 const db = pgp(cn);
