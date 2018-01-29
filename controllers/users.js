@@ -75,4 +75,10 @@ router.get(
 	}
 );
 
+// Update current user location
+router.put('/:userId', User.updateLocation, (req, res, next) => {
+	console.log('route hit.');
+	res.json(res.locals.updatedUserData);
+});
+
 module.exports = router;
