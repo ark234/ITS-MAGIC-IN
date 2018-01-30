@@ -38,7 +38,7 @@ passport.serializeUser((user, done) => {
 // routes, conveniently accessible as req.user in routes?
 passport.deserializeUser((userObj, done) => {
 	console.log('in passport.deserializeUser. userObj: ', userObj);
-	User.findByEmail(userObj.email)
+	User.findByUsername(userObj.username)
 		.then(user => {
 			done(null, user); // updates us to current database values
 		})
@@ -53,14 +53,14 @@ passport.use(
 	'local-signup',
 	new LocalStrategy(
 		{
-			// these are the names of the fields for email and password in
+			// these are the names of the fields for username and password in
 			// the login form we'll be serving (see the view)
-			usernameField: 'user[email]',
+			usernameField: 'user[username]',
 			passwordField: 'user[password]',
 			passReqToCallback: true
 		},
 		// note the `done` parameter:
-		(req, email, password, done) => {
+		(req, username, password, done) => {
 			User.create(req.body.user) // user .create returns a promise we can chain onto
 				.then(user => {
 					// signals that we have successfully signed up
@@ -79,12 +79,12 @@ passport.use(
 	'local-login',
 	new LocalStrategy(
 		{
-			usernameField: 'user[email]',
+			usernameField: 'user[username]',
 			passwordField: 'user[password]',
 			passReqToCallback: true
 		},
-		(req, email, password, done) => {
-			User.findByEmail(email) // Returns a promise!
+		(req, username, password, done) => {
+			User.findByUsername(username) // Returns a promise!
 				.then(user => {
 					if (user) {
 						// Here we use bcrypt to figure out whether the user is logged in or not

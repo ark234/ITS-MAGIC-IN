@@ -12,20 +12,22 @@
 </head>
 
 <body>
-	<h1>Home Page</h1>
-	<p id="user-id" data-user-id={{user.id}}>Welcome back, {{user.email}}</p>
+	<h1 id="user-id" data-user-id={{user.id}}>Welcome back, {{user.username}}!</h1>
 	<h2>Current Time:
 		<span id="time"></span>
 	</h2>
 	<h2>Location:
 		<span id="location" data-zip={{user.zip}}></span>
 	</h2>
-	<h2>Sunrise:
+	<h2>Morning Magic:
 		<span id="sunrise"></span>
 	</h2>
-	<h2>Sunset:
+	<h2>Evening Magic:
 		<span id="sunset"></span>
 	</h2>
+	<div>
+		<a href="/users/logout">Logout</a>
+	</div>
 </body>
 
 </html>

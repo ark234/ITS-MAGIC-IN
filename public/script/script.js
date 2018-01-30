@@ -3,6 +3,7 @@ $(function() {
 
 	const init = () => {
 		getLocationFromZip(zip);
+		clock();
 	};
 
 	// geonames username
@@ -18,9 +19,10 @@ $(function() {
 
 	// get current data/time using moment
 	const $time = $('#time');
-	setInterval(() => {
+	const clock = () => {
 		$time.text(moment().format('MMM Do YYYY, h:mm:ss a'));
-	}, 1000);
+		setTimeout(clock, 1000);
+	};
 
 	// send user location to server to be persisted
 	const setUserLocation = locationData => {
@@ -43,7 +45,7 @@ $(function() {
 	const getLocationFromZip = zip => {
 		console.log('Looking up location name for zip code', zip);
 		$.ajax({
-			url: `http://api.geonames.org/postalCodeLookupJSON?postalcode=${zip}&username=${GEONAMES_USER}`
+			url: `http://api.geonames.org/postalCodeLookupJSON?country=US&postalcode=${zip}&username=${GEONAMES_USER}`
 		}).done(data => {
 			// render current locatino name to view
 			$location.text(data.postalcodes[0].placeName + ', ' + data.postalcodes[0].adminCode1);
@@ -95,9 +97,27 @@ $(function() {
 			})
 		})
 			.done(data => {
-				// console.log('getMagic response:', data.results);
-				$('#sunrise').text(data.results.sunrise);
-				$('#sunset').text(data.results.sunset);
+				// result times are in GMT so we need to convert to UTC local
+				const sunrise = moment
+					.utc(data.results.sunrise)
+					.local()
+					.format('h:mm:ss a');
+				const sunrise2 = moment
+					.utc(data.results.sunrise)
+					.add(1, 'h')
+					.local()
+					.format('h:mm:ss a');
+				const sunset = moment
+					.utc(data.results.sunset)
+					.local()
+					.format('h:mm:ss a');
+				const sunset2 = moment
+					.utc(data.results.sunset)
+					.subtract(1, 'h')
+					.local()
+					.format('h:mm:ss a');
+				$('#sunrise').text(`${sunrise} ~ ${sunrise2}`);
+				$('#sunset').text(`${sunset2} ~ ${sunset}`);
 			})
 			.fail((jqxhr, status, errorThrown) => {
 				console.log('Error Status:', status);

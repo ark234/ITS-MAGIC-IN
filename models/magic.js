@@ -9,7 +9,7 @@ magicModel.getMagic = (req, res, next) => {
 	axios({
 		url: 'https://api.sunrise-sunset.org/json',
 		method: 'get',
-		params: { lat: req.body.latitude, lng: req.body.longitude }
+		params: { lat: req.body.latitude, lng: req.body.longitude, formatted: 0 }
 	})
 		.then(response => {
 			console.log('getMagic response: --> ', response.data);

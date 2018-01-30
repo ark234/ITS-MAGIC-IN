@@ -40,7 +40,7 @@ router.get('/logout', (req, res) => {
 	// Passport adds this method on req for us
 	req.logout();
 	// Redirect back to index page
-	res.redirect('/');
+	res.redirect('/users/login');
 });
 
 // Login
@@ -66,7 +66,7 @@ router.get(
 	'/home',
 	// Middleware that redirects unauthenticated users to login
 	auth.restrict,
-	User.findByEmailMiddleware,
+	User.findByUsernamelMiddleware,
 	(req, res) => {
 		console.log('in handler for /home');
 		console.log('req.user:');
