@@ -50,6 +50,10 @@ app.listen(PORT, () => {
 const userRouter = require('./controllers/users.js');
 app.use('/users', userRouter);
 
+// Set up magic controller
+const magicRouter = require('./controllers/magic.js');
+app.use('/magic', magicRouter);
+
 // Set up error handling middleware
 app.use((err, req, res, next) => {
 	console.log('Error encountered:', err);

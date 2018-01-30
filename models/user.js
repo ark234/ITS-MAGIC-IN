@@ -1,7 +1,6 @@
 // Import dependencies
 const bcrypt = require('bcryptjs');
 const db = require('../db/index.js');
-const moment = require('moment');
 
 const userModel = {};
 
