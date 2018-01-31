@@ -14,7 +14,7 @@ $(function() {
 	// get current data/time using moment
 	const $time = $('#time');
 	const clock = () => {
-		$time.text(moment().format('MMM Do YYYY, h:mm:ss a'));
+		$time.text(moment().format('HH:mm:ss'));
 		setTimeout(clock, 1000);
 	};
 
