@@ -8,6 +8,7 @@
 	<script src="/script/jquery.js"></script>
 	<script src="/script/moment.js"></script>
 	<script src="/script/script.js"></script>
+	<link rel="stylesheet" href="/css/master.css">
 	<title>Home</title>
 </head>
 
@@ -20,6 +21,8 @@
 			</h2>
 			<h2>Location:
 				<span id="location" data-zip={{user.zip}}></span>
+				<button id="geolocation-btn">Geolocate</button>
+				<span class="loading" id="geo-load">Loading...</span>
 			</h2>
 			<div id="menu">
 				<div id="submenu">

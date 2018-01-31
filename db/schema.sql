@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS magic;
 
 CREATE TABLE magic (
   id SERIAL PRIMARY KEY,
-  location_name VARCHAR NOT NULL,
+  location_name VARCHAR NOT NULL UNIQUE,
   last_updated DATE NOT NULL,
   sunrise VARCHAR NOT NULL,
   sunset VARCHAR NOT NULL
