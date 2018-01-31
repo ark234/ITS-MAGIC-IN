@@ -39,7 +39,7 @@ $(function() {
 	const getLocationFromZip = zip => {
 		console.log('Looking up location name for zip code', zip);
 		$.ajax({
-			url: `http://api.geonames.org/postalCodeLookupJSON?
+			url: `https://secure.geonames.org/postalCodeLookupJSON?
 			country=US&
 			postalcode=${zip}&
 			username=${GEONAMES_USER}`
@@ -60,7 +60,7 @@ $(function() {
 			// geolocation provides us latitude and longitude coords
 			$.ajax({
 				// here we're making ajax request to geonames api to do reverse lookup
-				url: `http://api.geonames.org/findNearbyPlaceNameJSON?
+				url: `https://secure.geonames.org/findNearbyPlaceNameJSON?
 				lat=${pos.coords.latitude}&
 				lng=${pos.coords.longitude}&
 				username=${GEONAMES_USER}`
