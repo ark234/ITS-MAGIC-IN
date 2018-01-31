@@ -8,6 +8,6 @@ const cn = {
 	database: 'fuzzy_yellow'
 };
 
-const db = pgp(cn);
+const db = pgp(process.env.DATABSE_URL || cn);
 
 module.exports = db;

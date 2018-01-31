@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const mustache = require('mustache-express');
+const dotenv = require('dotenv').config();
 
 // Configure app
 const app = express();
@@ -22,7 +23,7 @@ app.use(express.static(__dirname + '/public'));
 // Set up session middleware
 app.use(
 	session({
-		secret: 'taco cat',
+		secret: process.env.SECRET_KEY, // secret key required for sessions
 		resave: true,
 		saveUninitialized: true
 	})

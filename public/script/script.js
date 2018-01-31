@@ -39,12 +39,20 @@ $(function() {
 	const getLocationFromZip = zip => {
 		console.log('Looking up location name for zip code', zip);
 		$.ajax({
-			url: `http://api.geonames.org/postalCodeLookupJSON?country=US&postalcode=${zip}&username=${GEONAMES_USER}`
-		}).done(data => {
-			// render current locatino name to view
-			$location.text(data.postalcodes[0].placeName + ', ' + data.postalcodes[0].adminCode1);
-			getMagic(data.postalcodes[0]);
-		});
+			url: `http://api.geonames.org/postalCodeLookupJSON?
+			country=US&
+			postalcode=${zip}&
+			username=${GEONAMES_USER}`
+		})
+			.done(data => {
+				// render current locatino name to view
+				$location.text(data.postalcodes[0].placeName + ', ' + data.postalcodes[0].adminCode1);
+				getMagic(data.postalcodes[0]);
+			})
+			.fail((jqxhr, status, errorThrown) => {
+				console.log('Error Status:', status);
+				console.log('Error Thrown:', errorThrown);
+			});
 	};
 
 	const getLocationFromCoords = () => {
