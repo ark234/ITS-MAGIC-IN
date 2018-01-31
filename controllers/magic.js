@@ -7,9 +7,4 @@ router.post('/', Magic.getMagic, (req, res, next) => {
 	res.json(res.locals.magicData);
 });
 
-router.post('/insert', Magic.addMagic, (req, res, next) => {
-	console.log('inserted new magic record');
-	res.json({});
-});
-
 module.exports = router;

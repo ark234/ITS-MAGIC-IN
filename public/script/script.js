@@ -95,21 +95,21 @@ $(function() {
 				const sunrise = moment
 					.utc(data.sunrise)
 					.local()
-					.format('h:mm:ss a');
+					.format('HH:mm:ss');
 				const sunrise2 = moment
 					.utc(data.sunrise)
 					.add(1, 'h')
 					.local()
-					.format('h:mm:ss a');
+					.format('HH:mm:ss');
 				const sunset = moment
 					.utc(data.sunset)
 					.local()
-					.format('h:mm:ss a');
+					.format('HH:mm:ss');
 				const sunset2 = moment
 					.utc(data.sunset)
 					.subtract(1, 'h')
 					.local()
-					.format('h:mm:ss a');
+					.format('HH:mm:ss');
 				$('#sunrise').text(`${sunrise} ~ ${sunrise2}`);
 				$('#sunset').text(`${sunset2} ~ ${sunset}`);
 			})
