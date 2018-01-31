@@ -55,6 +55,10 @@ app.use('/users', userRouter);
 const magicRouter = require('./controllers/magic.js');
 app.use('/magic', magicRouter);
 
+app.get('/', (req, res) => {
+	res.redirect('/users/login');
+});
+
 // Set up error handling middleware
 app.use((err, req, res, next) => {
 	console.log('Error encountered:', err);

@@ -1,5 +1,6 @@
 // Import dependencies
 const pgp = require('pg-promise')();
+const dotenv = require('dotenv').config();
 
 // Configuration object
 const cn = {
@@ -8,6 +9,6 @@ const cn = {
 	database: 'fuzzy_yellow'
 };
 
-const db = pgp(process.env.DATABSE_URL || cn);
+const db = pgp(process.env.DATABASE_URL || cn);
 
 module.exports = db;
