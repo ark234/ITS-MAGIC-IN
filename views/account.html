@@ -5,11 +5,37 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="/script/jquery.js"></script>
+	<script src="/script/account.js"></script>
 	<title>Account</title>
 </head>
 
 <body>
-	<h1>Account</h1>
+	<main>
+		<section>
+			<h1>Account</h1>
+			<form id="account-update-form" action="/users/account/{{user.id}}">
+				<label for="email">Email</label>
+				<br>
+				<input type="text" id="email" name="user[email]" value="{{user.email}}">
+				<br>
+				<label for="phone">Phone</label>
+				<br>
+				<input type="text" id="phone" name="user[phone]" value="{{user.phone}}">
+				<br>
+				<label for="zip">Zip Code</label>
+				<br>
+				<input type="text" id="zip" name="user[zip]" value="{{user.zip}}">
+				<br>
+				<button>Update</button>
+			</form>
+			<div>
+				<a href="/users/home">Home</a>
+				<br>
+				<button id="account-del-btn" data-user-id={{user.id}}>Delete Account</button>
+			</div>
+		</section>
+	</main>
 </body>
 
 </html>

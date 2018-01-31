@@ -6,16 +6,10 @@ $(function() {
 		clock();
 	};
 
-	// geonames username
-	const GEONAMES_USER = 'ark234';
-	// location element
-	const $location = $('#location');
-	// get current user's id
-	const id = $('#user-id').data('user-id');
-	// get current user's zip code
-	const zip = $('#location').data('zip');
-	// get today's date
-	const today = moment().format('YYYY-MM-DD');
+	const GEONAMES_USER = 'ark234'; // geonames username
+	const $location = $('#location'); // location element
+	const id = $('#user-id').data('user-id'); // get current user's id
+	const zip = $('#location').data('zip'); // get current user's zip code
 
 	// get current data/time using moment
 	const $time = $('#time');
@@ -28,7 +22,7 @@ $(function() {
 	const setUserLocation = locationData => {
 		$.ajax({
 			url: `/users/${id}`,
-			type: 'PUT',
+			method: 'PUT',
 			contentType: 'application/json',
 			data: JSON.stringify({ locationData })
 		})
@@ -83,36 +77,36 @@ $(function() {
 		console.log(`Latitude: ${latitude}`);
 		console.log(`Longitude: ${longitude}`);
 		console.log(`Place Name: ${placeName}`);
-		console.log(`Today's Date: ${today}`);
 
+		// send location data to server
 		$.ajax({
 			url: '/magic',
-			type: 'POST',
+			method: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
 				latitude,
 				longitude,
-				placeName,
-				today
+				placeName
 			})
 		})
 			.done(data => {
 				// result times are in GMT so we need to convert to UTC local
+				console.log('$$$$ ajax result data:', data);
 				const sunrise = moment
-					.utc(data.results.sunrise)
+					.utc(data.sunrise)
 					.local()
 					.format('h:mm:ss a');
 				const sunrise2 = moment
-					.utc(data.results.sunrise)
+					.utc(data.sunrise)
 					.add(1, 'h')
 					.local()
 					.format('h:mm:ss a');
 				const sunset = moment
-					.utc(data.results.sunset)
+					.utc(data.sunset)
 					.local()
 					.format('h:mm:ss a');
 				const sunset2 = moment
-					.utc(data.results.sunset)
+					.utc(data.sunset)
 					.subtract(1, 'h')
 					.local()
 					.format('h:mm:ss a');

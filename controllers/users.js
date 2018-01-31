@@ -61,7 +61,7 @@ router.post(
 	})
 );
 
-// User profile
+// Route to home page
 router.get(
 	'/home',
 	// Middleware that redirects unauthenticated users to login
@@ -74,6 +74,30 @@ router.get(
 		res.render('./home', { user: res.locals.userData });
 	}
 );
+
+// Route to account page
+router.get(
+	'/account',
+	// Middleware that redirects unauthenticated users to login
+	auth.restrict,
+	User.findByUsernamelMiddleware,
+	(req, res) => {
+		console.log('in handler for /account');
+		console.log('req.user:');
+		console.log(req.user);
+		res.render('./account', { user: res.locals.userData });
+	}
+);
+
+// Update account information
+router.put('/account/:userId', auth.restrict, User.updateAccount, (req, res, next) => {
+	res.send({ updatedAccountId: res.locals.updatedAccountId });
+});
+
+// Delete account
+router.delete('/account/:userId', auth.restrict, User.deleteAccount, (req, res, next) => {
+	res.json({});
+});
 
 // Update current user location
 router.put('/:userId', User.updateLocation, (req, res, next) => {
