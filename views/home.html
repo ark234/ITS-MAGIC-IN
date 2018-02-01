@@ -15,12 +15,12 @@
 <body>
 	<main id="main-container">
 		<section id="header">
-			<h1 id="user-id" data-user-id={{user.id}}>Welcome back, {{user.username}}!</h1>
+			<!-- <h1 id="user-id" data-user-id={{user.id}}>Welcome back, {{user.username}}!</h1> -->
 			<div id="imi-container">
-				<h2 id="imi">
+				<div id="imi">
 					<span>It's Magic In&nbsp;</span>
 					<span id="location" data-zip={{user.zip}}></span>
-				</h2>
+				</div>
 				<p class="loading" id="geo-load">Loading...</p>
 			</div>
 			<div id="menu">
@@ -29,20 +29,25 @@
 					<a href="/users/logout">Logout</a>
 				</div>
 			</div>
+			<span id="time"></span>
 		</section>
-		<section id="clock">
-			<h2>Current Time&nbsp;</h2>
-			<h2 id="time"></h2>
-			<button id="geolocation-btn">Geolocation</button>
+		<section id="geolocation">
+			<div>
+				<button id="geolocation-btn">Geolocation</button>
+			</div>
 		</section>
 		<section id="body">
 			<div id="am">
-				<span>Morning Magic</span>
+				<!-- <span>Morning Magic</span> -->
 				<h2 id="sunrise"> </h2>
+				<p>🌞</p>
+				<h2 id="sunrise2"></h2>
 			</div>
 			<div id="pm">
-				<span>Evening Magic</span>
-				<h2 id="sunset"> </h2>
+				<!-- <span>Evening Magic</span> -->
+				<h2 id="sunset2"></h2>
+				<p>🌚</p>
+				<h2 id="sunset"></h2>
 			</div>
 		</section>
 		<section id="footer">

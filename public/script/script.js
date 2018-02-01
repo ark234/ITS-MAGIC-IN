@@ -11,8 +11,8 @@ $(function() {
 	const $location = $('#location'); // location element
 	const id = $('#user-id').data('user-id'); // get current user's id
 	const zip = $('#location').data('zip'); // get current user's zip code
-	const rise = '\n🌞\n';
-	const down = '\n🌚\n';
+	// const rise = '\n🌞\n';
+	// const down = '\n🌚\n';
 
 	// get current data/time using moment
 	const $time = $('#time');
@@ -113,25 +113,25 @@ $(function() {
 				const sunrise = moment
 					.utc(data.sunrise)
 					.local()
-					.format('HH:mm:ss');
+					.format('HH:mm');
 				const sunrise2 = moment
 					.utc(data.sunrise)
 					.add(1, 'h')
 					.local()
-					.format('HH:mm:ss');
+					.format('HH:mm');
 				const sunset = moment
 					.utc(data.sunset)
 					.local()
-					.format('HH:mm:ss');
+					.format('HH:mm');
 				const sunset2 = moment
 					.utc(data.sunset)
 					.subtract(1, 'h')
 					.local()
-					.format('HH:mm:ss');
-				$('#sunrise').text(`${sunrise}
-				${rise}
-				${sunrise2}`);
-				$('#sunset').text(sunset2 + '\n' + down + '\n' + sunset);
+					.format('HH:mm');
+				$('#sunrise').text(sunrise);
+				$('#sunrise2').text(sunrise2);
+				$('#sunset2').text(sunset2);
+				$('#sunset').text(sunset);
 			})
 			.fail((jqxhr, status, errorThrown) => {
 				console.log('Error Status:', status);

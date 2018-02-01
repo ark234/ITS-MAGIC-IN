@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
 
 body * {
-	margin: 0;
 	box-sizing: border-box; /* keep box from pushing each other */
 }
 
 body {
 	margin: 0;
+	overflow: hidden;
 	height: 100vh;
 	width: 100vw;
 	/* color: rgb(255, 179, 0); */
@@ -15,6 +15,7 @@ body {
 	/* text-shadow: 2px 1px rgb(234, 255, 0); */
 	text-shadow: 2px 1px rgb(255, 119, 0);
 	font-kerning: none;
+	font-weight: 900;
 	font-family: 'Bungee Hairline', cursive;
 }
 
@@ -87,7 +88,8 @@ a {
 
 #imi {
 	display: flex;
-	padding-bottom: 3vmin;
+	font-size: 3vmin;
+	/* padding-bottom: 3vmin; */
 }
 
 #location {
@@ -97,23 +99,38 @@ a {
 
 #menu {
 	/* border: 2px solid pink; */
+	margin-left: 25px;
+	height: 50px;
+	width: 50px;
+	background-image: url('/assets/menu.svg');
+	background-size: cover;
 }
 
 #submenu {
-	display: flex;
+	display: none;
 	flex-direction: column;
+	position: relative;
 }
 
-/********** CLOCK **********/
-#clock {
+#time {
+	/* border: 2px solid white; */
+	margin-right: 25px;
+	font-size: 3vmin;
+}
+
+/********** GEOLOCATION **********/
+#geolocation {
 	/* border: 2px solid yellow; */
-	margin-top: 5%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* margin-top: 5%; */
 	height: 10%;
 	font-size: 3vmin;
 }
 
 #geolocation-btn {
-	margin-top: 20px;
+	/* margin-top: 50px; */
 	font-family: 'Bungee Hairline', cursive;
 	font-weight: bold;
 	height: 30px;
@@ -122,17 +139,22 @@ a {
 /*********** BODY **********/
 #body {
 	/* border: 2px solid green; */
-	height: 55%;
+	height: 60%;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	font-size: 6vmin;
 }
 
+#body * {
+	margin: 0;
+	padding: 0;
+}
+
 #am,
 #pm {
 	/* border: 2px solid white; */
-	padding: 20px;
+	/* padding: 20px; */
 	display: flex;
 	flex-direction: column;
 }
@@ -147,3 +169,6 @@ a {
 	/* border: 2px solid purple; */
 	height: 15%;
 }
+
+/********** MISC **********/
+/* Entypo pictograms by Daniel Bruce — www.entypo.com */
