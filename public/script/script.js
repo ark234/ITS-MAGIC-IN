@@ -11,6 +11,8 @@ $(function() {
 	const $location = $('#location'); // location element
 	const id = $('#user-id').data('user-id'); // get current user's id
 	const zip = $('#location').data('zip'); // get current user's zip code
+	const rise = '\n🌞\n';
+	const down = '\n🌚\n';
 
 	// get current data/time using moment
 	const $time = $('#time');
@@ -58,37 +60,13 @@ $(function() {
 			});
 	};
 
-	// get user location from geolocation and send to server
-	// const getLocationFromCoords = () => {
-	// 	navigator.geolocation.getCurrentPosition(pos => {
-	// 		console.log('Getting geolocation! Coords:', pos.coords.latitude, pos.coords.longitude);
-	// 		// geolocation provides us latitude and longitude coords
-	// 		$.ajax({
-	// 			// here we're making ajax request to geonames api to do reverse lookup
-	// 			url: `https://secure.geonames.org/findNearbyPlaceNameJSON?
-	// 			lat=${pos.coords.latitude}&
-	// 			lng=${pos.coords.longitude}&
-	// 			username=${GEONAMES_USER}`
-	// 		})
-	// 			.done(data => {
-	// 				// render current location name to view
-	// 				// $location.text(data.geonames[0].name);
-	// 				// setUserLocation(data.geonames[0]);
-	// 			})
-	// 			.fail((jqxhr, status, errorThrown) => {
-	// 				console.log('Error Status:', status);
-	// 				console.log('Error Thrown:', errorThrown);
-	// 			});
-	// 	});
-	// };
-
 	// click handler for geolocation
 	const geolocationClickHandler = () => {
 		$('#geolocation-btn').click(e => {
 			$('#geolocation-btn').css('display', 'none'); // hide button to prevent user from spamming requests
 			$('#geo-load').css('display', 'inline'); // show loading message
 			navigator.geolocation.getCurrentPosition(pos => {
-				console.log('Getting geolocation! Coords:', pos.coords.latitude, pos.coords.longitude);
+				console.log('Getting geolocation! Coords:', pos, pos.coords.latitude, pos.coords.longitude);
 				$.ajax({
 					// here we're making ajax request to geonames api to do reverse lookup
 					url: `https://secure.geonames.org/findNearestAddressJSON?
@@ -114,9 +92,6 @@ $(function() {
 
 	// send user location to the server to request sunset/sunrise information via axios
 	const getMagic = (lat, lng, placename) => {
-		// const latitude = locationData.lat;
-		// const longitude = locationData.lng;
-		// const placeName = locationData.placeName;
 		console.log(`Latitude: ${lat}`);
 		console.log(`Longitude: ${lng}`);
 		console.log(`Place Name: ${placename}`);
@@ -153,8 +128,10 @@ $(function() {
 					.subtract(1, 'h')
 					.local()
 					.format('HH:mm:ss');
-				$('#sunrise').text(`${sunrise} ~ ${sunrise2}`);
-				$('#sunset').text(`${sunset2} ~ ${sunset}`);
+				$('#sunrise').text(`${sunrise}
+				${rise}
+				${sunrise2}`);
+				$('#sunset').text(sunset2 + '\n' + down + '\n' + sunset);
 			})
 			.fail((jqxhr, status, errorThrown) => {
 				console.log('Error Status:', status);

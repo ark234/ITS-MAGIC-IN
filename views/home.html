@@ -16,28 +16,34 @@
 	<main id="main-container">
 		<section id="header">
 			<h1 id="user-id" data-user-id={{user.id}}>Welcome back, {{user.username}}!</h1>
-			<h2>Current Time:
-				<span id="time"></span>
-			</h2>
-			<h2>Location:
-				<span id="location" data-zip={{user.zip}}></span>
-				<button id="geolocation-btn">Geolocate</button>
-				<span class="loading" id="geo-load">Loading...</span>
-			</h2>
+			<div id="imi-container">
+				<h2 id="imi">
+					<span>It's Magic In&nbsp;</span>
+					<span id="location" data-zip={{user.zip}}></span>
+				</h2>
+				<p class="loading" id="geo-load">Loading...</p>
+			</div>
 			<div id="menu">
 				<div id="submenu">
-					<a href="/users/logout">Logout</a>
 					<a href="/users/account">Account</a>
+					<a href="/users/logout">Logout</a>
 				</div>
 			</div>
 		</section>
+		<section id="clock">
+			<h2>Current Time&nbsp;</h2>
+			<h2 id="time"></h2>
+			<button id="geolocation-btn">Geolocation</button>
+		</section>
 		<section id="body">
-			<h2>Morning Magic:
-				<span id="sunrise"></span>
-			</h2>
-			<h2>Evening Magic:
-				<span id="sunset"></span>
-			</h2>
+			<div id="am">
+				<span>Morning Magic</span>
+				<h2 id="sunrise"> </h2>
+			</div>
+			<div id="pm">
+				<span>Evening Magic</span>
+				<h2 id="sunset"> </h2>
+			</div>
 		</section>
 		<section id="footer">
 			<div id="gh"></div>
