@@ -5,12 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="/css/master.css">
+	<link rel="stylesheet" href="/css/login.css">
 	<title>Login</title>
 </head>
 
 <body>
-	<main>
-		<section>
+	<main id="main-container">
+		<section id="login">
 			<h1>Login</h1>
 			<form action="/users/login" method="post">
 				<label for="username">Username</label>
@@ -21,12 +23,16 @@
 				<br>
 				<input type="password" id="password" name="user[password]">
 				<br>
-				<button>Login</button>
+				<br>
+				<button id="login-btn">Login</button>
 			</form>
-			<div>
-				<a href="/users/register">Sign Up</a>
+			<div id="signup">
+				<a href="/users/register">
+					<p>Sign Up</p>
+				</a>
 			</div>
 		</section>
+		<section id="about"></section>
 	</main>
 </body>
 

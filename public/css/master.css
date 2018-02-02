@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 
 body * {
 	box-sizing: border-box;
@@ -149,12 +150,11 @@ body {
 
 #geolocation-btn {
 	/* margin-top: 50px; */
-	font-weight: 900;
 	font-size: 2.5vmin;
 	height: 40px;
 }
 
-#geolocation-btn:hover {
+/* #geolocation-btn:hover {
 	background: linear-gradient(
 		135deg,
 		#000000,
@@ -170,7 +170,7 @@ body {
 	);
 	color: snow;
 	border: 1px solid goldenrod;
-}
+} */
 
 /*********** BODY **********/
 #body {
@@ -211,6 +211,7 @@ body {
 button {
 	font-family: 'Bungee Hairline', cursive;
 	border-radius: 10px;
+	font-weight: 900;
 	cursor: pointer;
 	border: none;
 	outline: none;
@@ -218,6 +219,24 @@ button {
 
 button:active {
 	transform: scale(0.9);
+}
+
+button:hover {
+	background: linear-gradient(
+		135deg,
+		#000000,
+		#060660,
+		#004d7e,
+		#006fe7,
+		#24bdff,
+		#ffec69,
+		#ffcb69,
+		#ffa369,
+		#ff6969,
+		#891919
+	);
+	color: snow;
+	border: 1px solid goldenrod;
 }
 
 .loading {
