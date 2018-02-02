@@ -139,10 +139,10 @@ img {
 	0% {
 	}
 	33% {
-		transform: translateX(-50px) rotateZ(-45deg);
+		transform: translateX(-30px) rotateZ(-30deg);
 	}
 	66% {
-		transform: translateX(50px) rotateZ(45deg);
+		transform: translateX(30px) rotateZ(30deg);
 	}
 	100% {
 		/* transform: translateX(50x) */
@@ -263,11 +263,11 @@ img {
 }
 
 #moon {
-	animation: roll 15s ease-in-out infinite;
+	animation: roll 30s ease-in-out infinite;
 }
 
 #sun {
-	animation: roll 15s ease-in-out infinite;
+	animation: roll 30s ease-in-out infinite;
 }
 
 /*********** FOOTER **********/
