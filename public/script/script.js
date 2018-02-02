@@ -11,8 +11,6 @@ $(function() {
 	const $location = $('#location'); // location element
 	const id = $('#user-id').data('user-id'); // get current user's id
 	const zip = $('#location').data('zip'); // get current user's zip code
-	// const rise = '\n🌞\n';
-	// const down = '\n🌚\n';
 
 	// get current data/time using moment
 	const $time = $('#time');
