@@ -8,7 +8,7 @@ const auth = require('../services/auth.js');
 router.post(
 	'/',
 	auth.restrict, // Middleware that redirects unauthenticated users to login
-	Magic.getMagic,
+	Magic.getMagicHours,
 	(req, res, next) => {
 		console.log('magic route hit');
 		res.json(res.locals.magicData);

@@ -4,6 +4,10 @@ const db = require('../db/index.js');
 
 const userModel = {};
 
+/**
+ * Create new user in users table.
+ * @param {*} user user to create
+ */
 userModel.create = function create(user) {
 	// This is where we obtain the hash of the user's password
 	console.log('creating user:', user);

@@ -11,7 +11,6 @@ h1 {
 }
 
 #login {
-	/* border: 2px solid gold; */
 	width: 100vw;
 }
 
@@ -42,6 +41,5 @@ h1 {
 
 #signup {
 	margin: 0 auto;
-	/* border: 2px solid white; */
 	max-width: 200px;
 }
