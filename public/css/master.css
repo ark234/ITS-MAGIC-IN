@@ -20,6 +20,16 @@ body {
 	font-family: 'Bungee Hairline', cursive;
 }
 
+.gh {
+	background-image: url('/assets/github.svg');
+	width: 50px;
+	height: 50px;
+}
+
+.gh:hover {
+	animation: scale 2s infinite ease-in-out;
+}
+
 /* https://www.gradient-animator.com/ */
 #main-container {
 	height: 100%;
@@ -42,6 +52,18 @@ body {
 }
 
 /********** ANIMATIONS **********/
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
 @keyframes slide {
 	0% {
 		background-position: 0% 0%;
@@ -108,7 +130,7 @@ body {
 	display: none;
 	position: absolute;
 	top: 100%;
-	min-width: 100px;
+	min-width: 125px;
 	padding: 0;
 	margin: 0;
 	z-index: 1;
@@ -180,7 +202,7 @@ body {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	font-size: 6vmin;
+	font-size: 10vmin;
 }
 
 #body * {
@@ -202,10 +224,15 @@ body {
 }
 
 /*********** FOOTER **********/
-#footer {
+.footer {
 	/* border: 2px solid purple; */
-	background: rgba(3, 19, 55, 0.5);
-	height: 10%;
+	/* background: rgba(3, 19, 55, 0.5); */
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	bottom: 25px;
 }
 
 /********** MISC **********/
@@ -248,6 +275,17 @@ button:hover {
 a {
 	text-decoration: none;
 	display: block;
+}
+
+li {
+	display: flex;
+	justify-content: center;
+}
+
+img {
+	height: 25px;
+	width: 25px;
+	/* display: inline-block; */
 }
 
 a:hover {
