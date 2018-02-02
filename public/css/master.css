@@ -135,6 +135,20 @@ img {
 	}
 }
 
+@keyframes roll {
+	0% {
+	}
+	33% {
+		transform: translateX(-50px) rotateZ(-45deg);
+	}
+	66% {
+		transform: translateX(50px) rotateZ(45deg);
+	}
+	100% {
+		/* transform: translateX(50x) */
+	}
+}
+
 /*********** HEADER **********/
 #header {
 	/* border: 2px solid red; */
@@ -246,6 +260,14 @@ img {
 #pm {
 	display: flex;
 	flex-direction: column;
+}
+
+#moon {
+	animation: roll 15s ease-in-out infinite;
+}
+
+#sun {
+	animation: roll 15s ease-in-out infinite;
 }
 
 /*********** FOOTER **********/

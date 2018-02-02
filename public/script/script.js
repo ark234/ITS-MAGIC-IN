@@ -77,7 +77,6 @@ $(function() {
 						$('#geo-load').css('display', 'none'); // hide loading message
 						// render current location name to view
 						$location.text(data.address.placename + ', ' + data.address.adminCode1);
-						// setUserLocation(data.geonames[0]);
 						getMagic(data.address.lat, data.address.lng, data.address.placename);
 					})
 					.fail((jqxhr, status, errorThrown) => {
