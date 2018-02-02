@@ -1,8 +1,3 @@
-h1 {
-	font-size: 10vmin;
-	margin: 0 0 100px 0;
-}
-
 #main-container {
 	display: flex;
 	flex-direction: column;
@@ -10,13 +5,21 @@ h1 {
 	justify-content: center;
 }
 
-#login {
-	/* border: 2px solid gold; */
+h1 {
+	font-size: 10vmin;
+	margin: 0 0 50px 0;
+}
+
+#register {
+	/* border: 2px solid snow; */
 	width: 100vw;
 }
 
 #username,
-#password {
+#password,
+#email,
+#phone,
+#zip {
 	width: 25vw;
 	height: 5vh;
 	min-width: 150px;
@@ -32,15 +35,16 @@ h1 {
 	box-shadow: 2px 1px rgb(255, 119, 0);
 }
 
-#login-btn {
-	min-width: 100px;
+#signup-btn {
+	min-width: 150px;
 	min-height: 30px;
 	width: 20vw;
 	height: 4vh;
 	font-size: 25px;
+	margin: 15px 0;
 }
 
-#signup {
+#login {
 	margin: 0 auto;
 	/* border: 2px solid white; */
 	max-width: 200px;

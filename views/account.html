@@ -5,14 +5,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="/css/master.css">
+	<link rel="stylesheet" href="/css/register.css">
+	<link rel="stylesheet" href="/css/account.css">
 	<script src="/script/jquery.js"></script>
 	<script src="/script/account.js"></script>
 	<title>Account</title>
 </head>
 
 <body>
-	<main>
-		<section>
+	<main id="main-container">
+		<section id="account">
 			<h1>Account</h1>
 			<form id="account-update-form" action="/users/account/{{user.id}}">
 				<label for="email">Email</label>
@@ -27,13 +30,12 @@
 				<br>
 				<input type="text" id="zip" name="user[zip]" value="{{user.zip}}">
 				<br>
-				<button>Update</button>
+				<button id="update-btn">Update</button>
 			</form>
-			<div>
+			<div id="home">
 				<a href="/users/home">Home</a>
-				<br>
-				<button id="account-del-btn" data-user-id={{user.id}}>Delete Account</button>
 			</div>
+			<button id="account-del-btn" data-user-id={{user.id}}>Delete Account</button>
 		</section>
 	</main>
 </body>

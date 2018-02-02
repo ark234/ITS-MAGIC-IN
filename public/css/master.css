@@ -129,6 +129,7 @@ body {
 #submenu li a:hover {
 	color: goldenrod;
 	text-shadow: #891919;
+	text-shadow: none;
 }
 
 #time {
@@ -246,6 +247,13 @@ button:hover {
 
 a {
 	text-decoration: none;
+	display: block;
+}
+
+a:hover {
+	color: goldenrod;
+	text-shadow: #891919;
+	text-shadow: none;
 }
 
 /********** CREDITS **********/
